@@ -102,12 +102,12 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
         // взламываем компьютер
         if (getCallbackQueryButtonKey().equals("step_7_btn")) {
             addUserGlory(50);
+            sendPhotoMessageAsync("step_8_pic");
             sendTextMessageAsync(STEP_8_TEXT, Map.of("Go out into the yard", "step_8_btn"));
         }
 
         // хвастаемся дворовым котам
         if (getCallbackQueryButtonKey().equals("step_8_btn")) {
-            sendPhotoMessageAsync("step_8_pic");
             sendTextMessageAsync(FINAL_TEXT);
             // Тут лучше использовать относительный путь от проекта
             sendImageMessageAsync("src/main/resources/images/final_pic.jpg");
